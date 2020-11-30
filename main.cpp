@@ -1,3 +1,5 @@
+//Wilfrido Varela COSC-1437   11/29/2020
+//Converting a struct style menu into an Object-Oriented process
 #include <iostream>
 #include <string>
 #include <vector>
@@ -55,7 +57,7 @@ int main()
 {
   greenTea();
   itemMenu i;
-i.showMenu();
+  i.showMenu();
 
  return 0;
 }
