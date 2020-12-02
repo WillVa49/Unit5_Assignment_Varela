@@ -248,6 +248,20 @@ class itemMenu
     coffee item6;
     wings item7;
   public:
+  void setGt (greenTea gtSet) {item1 = gtSet;}
+  void setB (burrito bSet) {item2 = bSet;}
+  void setT (taco tSet) {item3 = tSet;}
+  void setP (pizza pSet) {item4 = pSet;}
+  void setBu (burger buSet) {item5 = buSet;}
+  void setC (coffee cSet) {item6 = cSet;}
+  void setW (wings wSet) {item7 = wSet;}
+  greenTea getGt() const {return item1;}
+  burrito getB() const {return item2;}
+  taco getT() const {return item3;}
+  pizza getP() const {return item4;}
+  burger getBu() const {return item5;}
+  coffee getC() const {return item6;}
+  wings getW() const {return item7;}
   void showMenu()
   {
     cout << "Dr_T's Menu:" << endl;
@@ -273,9 +287,84 @@ class itemMenu
 
 int main() 
 {
-  greenTea();
   itemMenu i;
-  i.showMenu();
+  greenTea();
+  burrito();
+  taco();
+  pizza();
+  burger();
+  coffee();
+  wings();
+  greenTea gt;
+  burrito b;
+  taco t;
+  pizza p;
+  burger bur;
+  coffee c;
+  wings w;
+  char option = '\0';
+  int newCount = 0;
+  double subtotal = 0.0;
+  string name  = "";
 
+  do
+  {
+    system("clear");
+    i.showMenu();
+    cout << "Please choose an item (x to exit): ";
+    cin >> option;
+
+    if(option == 'A')
+    {
+      cout << "Menu item " << gt.getName() << " selected." << endl;
+      cout << "How many would you like?" << endl;
+      cin >> newCount;
+      gt.setCount(newCount);
+    }
+    else if (option == 'B')
+    {
+      cout << "Menu item " << b.getName() << " selected." << endl;
+      cout << "How many would you like?" << endl;
+      cin >> newCount;
+      b.setCount(newCount);
+    }
+    else if (option == 'C')
+    {
+      cout << "Menu item " << t.getName() << " selected." << endl;
+      cout << "How many would you like?" << endl;
+      cin >> newCount;
+      t.setCount(newCount);
+    }
+    else if (option == 'D')
+    {
+      cout << "Menu item " << p.getName() << " selected." << endl;
+      cout << "How many would you like?" << endl;
+      cin >> newCount;
+      p.setCount(newCount);
+    }
+    else if (option == 'E')
+    {
+      cout << "Menu item " << bur.getName() << " selected." << endl;
+      cout << "How many would you like?" << endl;
+      cin >> newCount;
+      bur.setCount(newCount);
+    }
+    else if (option == 'F')
+    {
+      cout << "Menu item " << c.getName() << " selected." << endl;
+      cout << "How many would you like?" << endl;
+      cin >> newCount;
+      c.setCount(newCount);
+    }
+    else if (option == 'G')
+    {
+      cout << "Menu item " << w.getName() << " selected." << endl;
+      cout << "How many would you like?" << endl;
+      cin >> newCount;
+      w.setCount(newCount);
+    }
+  }while (option != 'x' && option != 'X');
+  cout << "Thank you for placing your order." << endl;
+  
  return 0;
 }
